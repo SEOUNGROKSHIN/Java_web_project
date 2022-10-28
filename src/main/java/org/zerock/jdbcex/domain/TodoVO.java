@@ -1,7 +1,13 @@
 package org.zerock.jdbcex.domain;
 
-import java.time.LocalDate;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.ToString;
 
+import java.time.LocalDate;
+@Getter
+@Builder
+@ToString
 public class TodoVO {
 
     private Long tno;
