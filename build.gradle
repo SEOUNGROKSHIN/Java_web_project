@@ -28,9 +28,14 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
     implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '3.0.4'
+
     implementation group: 'com.zaxxer', name: 'HikariCP' , version: '5.0.0'
-    // https://mvnrepository.com/artifact/org.modelmapper/modelmapper
+
     implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.0.0'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.0'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.0'
+    testImplementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.0'
 
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
