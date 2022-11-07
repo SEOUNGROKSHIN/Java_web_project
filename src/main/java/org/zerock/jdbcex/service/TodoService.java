@@ -28,8 +28,8 @@ public enum TodoService {
         TodoVO todoVO = modelMapper.map(todoDTO , TodoVO.class);
 
         log.info(todoVO);
+        dao.insert(todoVO);
 
-        dao.insert(todoVO); // int를 반환하므로 이를 이용해서 예외처리도 가능
     }
 
     public List<TodoDTO> listAll() throws Exception {
@@ -45,5 +45,15 @@ public enum TodoService {
                 .collect(Collectors.toList());
 
         return dtoList;
+    }
+
+    public TodoDTO get(Long tno) throws Exception {
+
+        log.info("tno : " + tno);
+        TodoVO todoVO = dao.selectOne(tno);
+        TodoDTO todoDTO = modelMapper.map(todoVO , TodoDTO.class);
+
+        return todoDTO;
+
     }
 }
