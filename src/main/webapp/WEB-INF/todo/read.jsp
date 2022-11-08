@@ -24,7 +24,7 @@
     <input type="checkbox" name="finished" ${dto.finished ? "checked" : ""} readonly>
   </div>
   <div>
-    <a href="/todo/modify?tno=${dto.tno}">Modify/Remove</a>
+    <a href="/todo/modify?tno=${dto.tno}">Modify / Remove</a>
     <a href="/todo/list">List</a>
   </div>
 </body>
