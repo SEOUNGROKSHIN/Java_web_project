@@ -1,7 +1,6 @@
 package org.zerock.jdbcex.controller;
 
 import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

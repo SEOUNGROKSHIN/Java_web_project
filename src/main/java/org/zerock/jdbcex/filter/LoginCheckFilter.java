@@ -18,7 +18,7 @@ public class LoginCheckFilter implements Filter {
 
         log.info("Login check Filter....");
 
-        //(HttpServletRequest , HttpServletResponse )는 HttpServlet 의 자식 Method를 이용하기 위해서 다운 캐스팅을 진행하였다
+        // (HttpServletRequest , HttpServletResponse )는 HttpServlet 의 자식 Method를 이용하기 위해서 다운 캐스팅을 진행하였다
 
         HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
