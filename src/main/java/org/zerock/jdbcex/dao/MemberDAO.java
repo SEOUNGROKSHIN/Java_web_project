@@ -20,7 +20,7 @@ public class MemberDAO {
         @Cleanup Connection connection = ConnectionUtil.INSTANCE.getConnection();
         @Cleanup PreparedStatement pstmt = connection.prepareStatement(query);
         pstmt.setString(1, mid);
-        pstmt.setString(2, mid);
+        pstmt.setString(2, mpw);
 
         @Cleanup ResultSet rset = pstmt.executeQuery();
 

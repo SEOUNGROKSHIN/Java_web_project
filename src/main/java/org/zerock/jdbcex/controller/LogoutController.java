@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "LogoutController" , value = "/logout")
+@WebServlet("/logout")
 @Log4j2
 public class LogoutController extends HttpServlet {
 
