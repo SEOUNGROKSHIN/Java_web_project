@@ -27,7 +27,7 @@ public class TodoServiceTests {
             .dueDate(LocalDate.now())
             .build();
 
-    log.info("@test Log4j : " + "-----------------------"); // 테스트 코드의 Log4j2 설정 확인
+    log.info("@test  : " + "-----------------------"); // 테스트 코드의 2 설정 확인
     log.info(todoDTO);
 
     todoService.register(todoDTO);
