@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Todo List</h1>
-
+<h3>${appName}</h3>
 <h2>${loginInfo}</h2>
 <h3>${loginInfo.mname}님 + 환영합니다.</h3>
 
