@@ -38,6 +38,14 @@ dependencies {
     implementation group: 'org.springframework', name: 'spring-test', version: '5.3.19'
 
     implementation group: 'org.springframework', name: 'spring-webmvc', version: '5.3.19'
+    // Spring - mybatis 라이브러리
+    implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.3.19'
+    implementation group: 'org.springframework', name: 'spring-tx', version: '5.3.19'
+    // mybatis - 라이브 러리
+    implementation group: 'org.mybatis', name: 'mybatis', version: '3.5.9'
+    implementation group: 'org.mybatis', name: 'mybatis-spring', version: '2.0.7'
+
+
 
 
     // Lombok 라이브러리
