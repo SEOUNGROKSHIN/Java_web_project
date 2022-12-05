@@ -1,9 +1,12 @@
 package org.zerock.springex.controller.exception;
 
 import lombok.extern.log4j.Log4j2;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.servlet.NoHandlerFoundException;
 
 import java.util.Arrays;
 
@@ -17,8 +20,6 @@ public class CommonExceptionAdvice {
 
         log.error("------------------------------------------------------");
         log.error(numberFormatException.getMessage());
-
-        StringBuffer buffer = new StringBuffer("<ul>")
 
         return "NUMBER FORMAT EXCEPTION";
     }
@@ -40,5 +41,12 @@ public class CommonExceptionAdvice {
         buffer.append("</ul>");
 
         return buffer.toString();
+    }
+    // @ControllerAdvice에 작성하는 메소드에 @ResponseStatus를 이용하면 404 상태에 맞게 화면을 별도로 작성할 수 있다.
+    @ExceptionHandler(NoHandlerFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String notFound() {
+
+        return "custom404";
     }
 }
