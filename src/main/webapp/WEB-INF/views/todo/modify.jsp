@@ -48,7 +48,8 @@
                     Featured
                 </div>
                 <div class="card-body">
-                    <div class="input-group mb-3">
+                    <form action="/todo/remove" method="post">
+                     <div class="input-group mb-3">
                         <span class="input-group-text">TNO</span>
                         <input type="text" name="tno" class="form-control"
                                value=<c:out value="${dto.tno}"></c:out> readonly>
@@ -64,7 +65,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text">DueDate</span>
                         <input type="text" name="dueDate" class="form-control"
-                               value=<c:out value="${dto.dueDate}"></c:out> readonly>
+                               value=<c:out value="${dto.dueDate}"></c:out> >
                     </div>
 
                     <div class="input-group mb-3">
@@ -77,26 +78,33 @@
                         <label class="form-check-label" >
                             Finished &nbsp
                         </label>
-                        <input class="form-check-input" type="checkbox" name="finished" ${dto.finished? "checked":""} disabled >
+                        <input class="form-check-input" type="checkbox" name="finished" ${dto.finished? "checked":""} >
                     </div>
 
                     <div class="my-4">
                         <div class="float-end">
+                            <button type="button" class="btn btn-danger">Remove</button>
                             <button type="button" class="btn btn-primary">Modify</button>
                             <button type="button" class="btn btn-secondary">List</button>
                         </div>
                     </div>
-
-                    <script>
-                        document.querySelector(".btn-primary").addEventListener("click" , function(e) {
-                            self.location = "/todo/modify?tno="+${dto.tno}
-                        } , false)
-
-                        document.querySelector(".btn-secondary").addEventListener("click" , function (e) {
-                            self.location = "/todo/list";
-                        } , false)
-                    </script>
                     </form>
+                </div>
+
+                <script>
+                    const formObj = document.querySelector("form")
+
+                    document.querySelector(".btn-danger").addEventListener("click" , function (e) {
+                        e.preventDefault()
+                        e.stopPropagation()
+
+                        formObj.action = "/todo/remove"
+                        formObj.method = "post"
+
+                        formObj.submit()
+                    }, false);
+
+                </script>
 
                 </div>
             </div>

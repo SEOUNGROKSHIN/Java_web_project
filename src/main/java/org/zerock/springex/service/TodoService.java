@@ -13,4 +13,6 @@ public interface TodoService {
 
     TodoDTO getOne(Long tno);
 
+    void delete(Long tno);
+
 }

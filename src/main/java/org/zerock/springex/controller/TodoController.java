@@ -8,7 +8,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.zerock.springex.dto.TodoDTO;
 import org.zerock.springex.service.TodoService;
@@ -57,12 +56,22 @@ public class TodoController {
 
         return "redirect:/todo/list";
     }
-    @GetMapping("/read")
+    @GetMapping({"/read", "/modify"})
     public void read(Long tno , Model model) {
 
         TodoDTO  todoDTO = todoService.getOne(tno);
         log.info(todoDTO);
 
         model.addAttribute("dto" , todoDTO);
+    }
+    @PostMapping("/remove")
+    public String remove(Long tno , RedirectAttributes redirectAttributes){
+
+        log.info("--------------------remove-------------------------");
+        log.info("tno : " + tno);
+
+        todoService.delete(tno);
+        
+        return "redirect:/todo/list";
     }
 }
