@@ -23,4 +23,10 @@
     <delete id="remove">
         DELETE FROM tbl_todo where tno = #{tno}
     </delete>
+
+    <update id="update">
+        update tbl_todo
+           set title = #{titlea} , dueDate = #{dueDate} , finished = #{finished}
+         where tno = #{tno}
+    </update>
 </mapper>
