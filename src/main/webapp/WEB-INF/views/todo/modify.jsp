@@ -90,6 +90,16 @@
                     </div>
                     </form>
                 </div>
+                <script>
+                    const serverValidResult = {}
+
+                    <c:forEach items="${errors}" var="error">
+
+                    serverValidResult['${error.getField()}'] = '${error.defaultMessage}'
+                    </c:forEach>
+
+                    console.log(serverValidResult)
+                </script>
 
                 <script>
                     const formObj = document.querySelector("form")
@@ -104,6 +114,23 @@
                         formObj.submit()
                     }, false);
 
+                    document.querySelector(".btn-primary").addEventListener("click" , function (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        formObj.action = "/todo/modify"
+                        formObj.method = "post"
+
+                        formObj.submit()
+                    }, false)
+
+                    document.querySelector(".btn-secondary").addEventListener("click" , function (e) {
+
+                        e.preventDefault();
+                        e.stopPropagation();
+
+                        self.location = "/todo/list";
+                    }, false)
                 </script>
 
                 </div>
