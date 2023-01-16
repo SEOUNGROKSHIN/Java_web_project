@@ -58,7 +58,7 @@
                     <div class="input-group mb-3">
                         <span class="input-group-text">Title</span>
                         <input type="text" name="title" class="form-control"
-                               value=<c:out value="${dto.title}"></c:out> readonly>
+                               value=<c:out value="${dto.title}"></c:out> >
                     </div>
 
 
