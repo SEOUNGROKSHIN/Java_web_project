@@ -60,5 +60,4 @@ public class TodoMapperTests {
 
         voList.forEach(vo -> log.info(vo));
     }
-
 }
