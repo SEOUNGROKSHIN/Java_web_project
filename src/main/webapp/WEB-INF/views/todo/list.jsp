@@ -59,7 +59,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${dtoList}" var="dto">
+                        <c:forEach items="${responseDTO.dtoList}" var="dto">
                         <tr>
                             <th scope="row"><c:out value="${dto.tno}"/></th>
                             <td><a href="/todo/read?tno=${dto.tno}" class="text-decoration-none">
@@ -72,6 +72,15 @@
                         </c:forEach>
                         </tbody>
                     </table>
+
+                    <div class="float-end">
+                       <ul class="pagination flex-wrap">
+                            <c:forEach begin="${responseDTO.start}" end="${responseDTO.end}" var="num">
+                                <li class="page-item"><a class="page-link" href="#">${num}</a></li>
+                            </c:forEach>
+                        </ul>
+                    </div>
+
                 </div>
             </div>
         </div>

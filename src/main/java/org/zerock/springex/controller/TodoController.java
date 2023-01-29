@@ -31,7 +31,7 @@ public class TodoController {
         model.addAttribute("dtoList" , todoService.getAll());
 
     }*/
-
+    @GetMapping("/list")
     public void list(@Valid PageRequestDTO pageRequestDTO , BindingResult bindingResult, Model model) {
 
         log.info(pageRequestDTO);
