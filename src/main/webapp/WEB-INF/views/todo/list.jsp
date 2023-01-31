@@ -94,6 +94,23 @@
                         </ul>
                     </div>
 
+                    <script>
+
+                        document.querySelector(".pagination").addEventListener("click" , function(e) {
+                            e.preventDefault()
+                            e.stopPropagation()
+
+                            const target = e.target;
+
+                            if(target.tagName !== 'A') {
+                                return
+                            }
+                            const num = target.getAttribute("data-num")
+
+                            self.location = '/todo/;ost?page=\${num}' //백틱(' ')을 이용해서 템플릿 처리
+                        },false)
+
+                    </script>
                 </div>
             </div>
         </div>
